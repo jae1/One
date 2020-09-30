@@ -13,9 +13,13 @@ namespace One.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+/*        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+        }
+*/
+        public HomeController()
+        {
         }
 
         public IActionResult Index()
@@ -23,7 +27,7 @@ namespace One.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult About()
         {
             return View();
         }
