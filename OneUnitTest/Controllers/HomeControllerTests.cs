@@ -1,18 +1,20 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using One.Controllers;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace One.Controllers.Tests
 {
+
     [TestClass()]
     public class HomeControllerTests
     {
-        [TestMethod()]
-        public void IndexTest()
+        [TestMethod]
+        public void HomeIndexView()
         {
-            Assert.Fail();
+            var controller = new HomeController();
+            var res = controller.Index() as ViewResult;
+
+            Assert.AreEqual("Jaewon Jeong", res.ViewName);
         }
     }
 }
