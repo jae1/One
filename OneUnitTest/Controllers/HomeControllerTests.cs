@@ -1,6 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Moq;
 using One.Controllers;
+using One.Data;
+using Microsoft.Extensions.Logging;
 
 namespace One.Controllers.Tests
 {
@@ -9,12 +15,34 @@ namespace One.Controllers.Tests
     public class HomeControllerTests
     {
         [TestMethod]
-        public void HomeIndexView()
+        public void Index()
         {
-            var controller = new HomeController();
-            var res = controller.Index() as ViewResult;
+            // Arrange
+            var mock = new Mock<ILogger<HomeController>>();
+            ILogger<HomeController> logger = mock.Object;
+            var controller = new HomeController(logger);
 
-            Assert.AreEqual("Jaewon Jeong", res.ViewName);
+            // Act
+            ViewResult res = controller.Index() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(res);
         }
+
+        public void About()
+        {
+            // Arrange
+            var mock = new Mock<ILogger<HomeController>>();
+            ILogger<HomeController> logger = mock.Object;
+            var controller = new HomeController(logger);
+
+            // Act
+            ViewResult res = controller.About() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(res);
+        }
+
+
     }
 }
