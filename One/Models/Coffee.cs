@@ -12,14 +12,12 @@ namespace One.Models
         public int Id { get; set; }
         public string Name { get; set; }
         [DisplayFormat(DataFormatString = "{0:C0}", ApplyFormatInEditMode = true)]
-        public string Image { get; set; }
         public float? Price { get; set; }
         public string Weight { get; set; }
         public string Description { get; set; }
         public string RoastLevel { get; set; }
         public string Taste { get; set; }
         public string Img { get; set; }
-        public string CoffeeName { get; set; }
         [DataType(DataType.Date)]
         public DateTime RoastDate { get; set; }
     }
