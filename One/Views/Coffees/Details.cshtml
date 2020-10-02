@@ -6,68 +6,60 @@
 }
 
 <div class="container">
-
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1>
-            @Html.DisplayFor(model => model.Name)
-        </h1>
-    </div>
-
-    <div>
-        <dl class="row">
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
-            <dd class="col-sm-10">
+    <div class="row mt-5 mb-1">
+        <div class="col-7">
+            <img src="~/img/@Html.DisplayFor(model => model.Img)" class="card-img-top" alt="@Html.DisplayFor(model => model.Name)">
+        </div>
+        <div class="col-5">
+            <h2>
                 @Html.DisplayFor(model => model.Name)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Img)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Img)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Price)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Price)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Weight)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Weight)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Description)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Description)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.RoastLevel)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.RoastLevel)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Taste)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Taste)
-            </dd>
-
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.RoastDate)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.RoastDate)
-            </dd>
-        </dl>
+            </h2>
+            <div class="mb-1">
+                <h6>
+                    @Html.DisplayFor(model => model.Price) | @Html.DisplayFor(model => model.Weight)
+                </h6>
+            </div>
+            <div class="mb-2">
+                <p>
+                    @Html.DisplayFor(model => model.Description)
+                </p>
+            </div>
+        </div>
     </div>
+
+    <div class="row mt-1 mb-1 text-center">
+        <div class="col-sm-4">
+            <div class="card mb-4 p-3 pb-5 pt-5">
+                <div class="card-body">
+                    <h6>Roasted on </h6>
+                    <h4>@Html.DisplayFor(model => model.RoastDate)</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card mb-4 p-3 pb-5 pt-5">
+                <div class="card-body">
+                    <h6>Roast Level</h6>
+                    <h4>@Html.DisplayFor(model => model.RoastLevel)</h4>
+                </div> 
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card mb-4 p-3 pb-5 pt-5">
+                <div class="card-body">
+                    <h6>Taste</h6>
+                    <h4>@Html.DisplayFor(model => model.Taste)</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <div>
         <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Delete" asp-route-id="@Model.Id">Delete</a> |
+
         <a asp-action="Index">Back to List</a>
     </div>
 </div>
