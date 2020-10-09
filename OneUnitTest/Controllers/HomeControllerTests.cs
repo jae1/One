@@ -29,6 +29,7 @@ namespace One.Controllers.Tests
             Assert.IsNotNull(res);
         }
 
+        [TestMethod]
         public void About()
         {
             // Arrange

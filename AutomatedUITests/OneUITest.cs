@@ -22,15 +22,27 @@ namespace UnitTest
 
 
         [Fact]
-        public void Navigation()
+        public void NavigateToHome()
         {
             _driver.Navigate().GoToUrl("https://localhost:44314/");
             Assert.Equal("The Best Coffee Subscription - One", _driver.Title);
 
+            Dispose();
+        }
+
+        [Fact]
+        public void NavigateToCoffees()
+        {
             _driver.Navigate()
                 .GoToUrl("https://localhost:44314/Coffees");
             Assert.Equal("Shop - One", _driver.Title);
 
+            Dispose();
+        }
+
+        [Fact]
+        public void NavigateToAbout()
+        {
             _driver.Navigate()
                 .GoToUrl("https://localhost:44314/Home/About");
             Assert.Equal("About - One", _driver.Title);
@@ -63,6 +75,5 @@ namespace UnitTest
             Assert.Equal("The value '' is invalid.", errorMessage);
             Dispose();
         }
-
     }
 }
